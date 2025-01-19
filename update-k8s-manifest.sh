@@ -3,7 +3,7 @@
 set -x
 
 # Set the repository URL
-REPO_URL="https://github.com/krishna33-vish/node-app.git"
+REPO_URL="https://github.com/SyedaMaseera/myfirst-node-app.git"
 
 # Clone the git repository into the /tmp directory
 git clone "$REPO_URL" /tmp/temp_repo
