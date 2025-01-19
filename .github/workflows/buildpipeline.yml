@@ -26,7 +26,7 @@ jobs:
       - name: Build and Push Docker Image
         id: docker_build
         run: |
-          IMAGE_NAME=krishna33gaikwad/node-mysql-curd-app
+          IMAGE_NAME=syedamaseera/my-node-app
           IMAGE_TAG=${{ github.sha }}
           docker build -t $IMAGE_NAME:$IMAGE_TAG .
           docker push $IMAGE_NAME:$IMAGE_TAG
@@ -38,7 +38,7 @@ jobs:
 
       - name: Update Kubernetes Manifests
         run: |
-          sed -i "s|image:.*|image: krishna33gaikwad/node-mysql-curd-app:${{ github.sha }}|g" ./k8s-manifest/app-deployment.yml
+          sed -i "s|image:.*|image: syedamaseera/my-node-app:${{ github.sha }}|g" ./k8s-manifest/app-deployment.yml
           git add ./k8s-manifest/app-deployment.yml
           git commit -m "Update image tag to ${{ github.sha }}"
 
