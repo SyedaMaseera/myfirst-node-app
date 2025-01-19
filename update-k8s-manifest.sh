@@ -13,7 +13,7 @@ cd /tmp/temp_repo
 
 # Make changes to the Kubernetes manifest file(s)
 # For example, let's say you want to change the image tag in a deployment.yaml file
-sed -i "s|image:.*|image: krishna33gaikwad/node-mysql-curd-app/$2:$3|g" app-deployment.yml
+sed -i "s|image:.*|image: syedamaseera/my-node-app/$2:$3|g" app-deployment.yml
 
 # Add the modified files
 git add .
