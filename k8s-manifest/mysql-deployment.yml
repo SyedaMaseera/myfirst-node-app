@@ -58,13 +58,16 @@ spec:
       storage: 1Gi
 
 ---
-apiVersion: v1
 kind: Service
 metadata:
   name: mysql-service
-  namespace: argocd  # Added namespace
+  namespace: argocd  # Ensure this matches your namespace
 spec:
+  type: NodePort  # Changed from ClusterIP to NodePort
   ports:
-    - port: 3306
+    - port: 3306      # Internal service port
+      targetPort: 3306 # MySQL container port
+      nodePort: 30006  # Optional: Specify a NodePort (must be between 30000-32767)
   selector:
     app: mysql
+
