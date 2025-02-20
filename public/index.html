@@ -37,12 +37,14 @@
             fetch('/products')
                 .then(response => response.json())
                 .then(products => {
+                    console.log("Fetched products:", products);
                     const productList = document.getElementById('productList');
                     productList.innerHTML = ''; // Clear previous products
                     if (products.length === 0) {
                         productList.innerHTML = '<p>No products available. Add some!</p>';
                     } else {
                         products.forEach(product => {
+                            console.log("Product:", product);
                             const productDiv = document.createElement('div');
                             productDiv.className = 'product';
                             productDiv.innerHTML = `
