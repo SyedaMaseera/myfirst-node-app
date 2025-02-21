@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: syedamaseera/my-node-app:4f53b27b814d436c744c97059f9bb7a8f8b1ed8d
+          image: syedamaseera/my-node-app:6b5f30db3a2a87b829e6659ccc61d2a601567dcd
           ports:
             - containerPort: 3000
           env:
